@@ -14,6 +14,11 @@ public class Main {
 //        for (Job job : jobs){
 //            System.out.println(job);
 //        }
+
+//        // for testing the line separators at the beginning
+//    Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        System.out.println(job);
+//        System.out.println("banana");
     }
 
 }

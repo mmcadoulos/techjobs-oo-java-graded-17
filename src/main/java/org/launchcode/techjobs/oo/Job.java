@@ -38,10 +38,10 @@ public class Job {
         if (employer==null&&location==null&&positionType==null&&coreCompetency==null){return "OOPS! This job does not seem to exist.";}
         return System.lineSeparator() +"ID: " + getId()+
                 "\nName: " + (name.isBlank()? "Data not available" : name)+
-                "\nEmployer: " + (getEmployer().toString().isBlank() ? "Data not available" : getEmployer())+
-                "\nLocation: " +(getLocation().toString().isBlank()? "Data not available" : getLocation())+
-                "\nPosition Type: " + (getPositionType().toString().isBlank()? "Data not available" : getPositionType())+
-                "\nCore Competency: "+ (getCoreCompetency().toString().isBlank()? "Data not available" : getCoreCompetency()) + System.lineSeparator();
+                "\nEmployer: " + (getEmployer().getValue().isBlank() ? "Data not available" : getEmployer().getValue())+
+                "\nLocation: " +(getLocation().getValue().isBlank()? "Data not available" : getLocation().getValue())+
+                "\nPosition Type: " + (getPositionType().getValue().isBlank()? "Data not available" : getPositionType().getValue())+
+                "\nCore Competency: "+ (getCoreCompetency().getValue().isBlank()? "Data not available" : getCoreCompetency().getValue()) + System.lineSeparator();
 //        return returnString;
     }
     @Override

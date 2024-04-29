@@ -30,20 +30,24 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
     @Override
-    public String toString(){
+    public String toString() {
 //        String returnString = System.lineSeparator() +  + System.lineSeparator();
-        if (employer==null&&location==null&&positionType==null&&coreCompetency==null){return "OOPS! This job does not seem to exist.";}
-        return System.lineSeparator() +"ID: " + getId()+
-                "\nName: " + (name.isBlank()? "Data not available" : name)+
-                "\nEmployer: " + (getEmployer().getValue().isBlank() ? "Data not available" : getEmployer().getValue())+
-                "\nLocation: " +(getLocation().getValue().isBlank()? "Data not available" : getLocation().getValue())+
-                "\nPosition Type: " + (getPositionType().getValue().isBlank()? "Data not available" : getPositionType().getValue())+
-                "\nCore Competency: "+ (getCoreCompetency().getValue().isBlank()? "Data not available" : getCoreCompetency().getValue()) + System.lineSeparator();
+        if (employer == null && location == null && positionType == null && coreCompetency == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        return System.lineSeparator() + "ID: " + getId() +
+                "\nName: " + (name.isBlank() ? "Data not available" : name) +
+                "\nEmployer: " + (getEmployer().getValue().isBlank() ? "Data not available" : getEmployer().getValue()) +
+                "\nLocation: " + (getLocation().getValue().isBlank() ? "Data not available" : getLocation().getValue()) +
+                "\nPosition Type: " + (getPositionType().getValue().isBlank() ? "Data not available" : getPositionType().getValue()) +
+                "\nCore Competency: " + (getCoreCompetency().getValue().isBlank() ? "Data not available" : getCoreCompetency().getValue()) + System.lineSeparator();
 //        return returnString;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -30,6 +30,11 @@ public abstract class JobField {
         return Objects.hashCode(id);
     }
 
+    @Override
+    public String toString() {
+        return value;
+    }
+
     public int getId() {
         return id;
     }

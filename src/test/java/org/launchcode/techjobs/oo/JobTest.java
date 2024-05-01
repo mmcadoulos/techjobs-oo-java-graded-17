@@ -17,7 +17,7 @@ public class JobTest {
         Job firstJob = new Job();
         Job secondJob = new Job();
 
-        Assert.assertNotEquals(firstJob, secondJob);
+        Assert.assertNotEquals(firstJob.getId(), secondJob.getId());
 
     }
 
@@ -59,25 +59,25 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Assert.assertEquals("""
-                ID: 4
-                Name: Product tester
-                Employer: ACME
-                Location: Desert
-                Position Type: Quality control
-                Core Competency: Persistence""", job.toString().trim());
+        String jobString = "ID: " + job.getId() + "\n" +
+                "Name: Product tester\n" +
+                "Employer: ACME\n" +
+                "Location: Desert\n" +
+                "Position Type: Quality control\n" +
+                "Core Competency: Persistence";
+        Assert.assertEquals(jobString, job.toString().trim());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
         Job job = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-        Assert.assertEquals("""
-                ID: 3
-                Name: Data not available
-                Employer: Data not available
-                Location: Data not available
-                Position Type: Data not available
-                Core Competency: Data not available""", job.toString().trim());
+        String jobString = "ID: " + job.getId() + "\n" +
+                "Name: Data not available\n" +
+                "Employer: Data not available\n" +
+                "Location: Data not available\n" +
+                "Position Type: Data not available\n" +
+                "Core Competency: Data not available";
+        Assert.assertEquals(jobString, job.toString().trim());
     }
 
     @Test
